@@ -1,0 +1,17 @@
+%COPYRIGHT_LINE%
+
+%PCH_INCLUDE_DIRECTIVE%
+#include "S%UNPREFIXED_CLASS_NAME%.h"
+#include "SlateOptMacros.h"
+
+BEGIN_SLATE_FUNCTION_BUILD_OPTIMIZATION
+void %PREFIXED_CLASS_NAME%::Construct(const FArguments& InArgs)
+{
+	/*
+	ChildSlot
+	[
+		// Populate the widget
+	];
+	*/
+}
+END_SLATE_FUNCTION_BUILD_OPTIMIZATION

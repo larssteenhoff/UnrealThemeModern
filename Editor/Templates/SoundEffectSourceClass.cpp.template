@@ -1,0 +1,40 @@
+%COPYRIGHT_LINE%
+
+%PCH_INCLUDE_DIRECTIVE%
+#include "%UNPREFIXED_CLASS_NAME%.h"
+
+// Useful header for various DSP-related utility functions.
+#include "DSP/Dsp.h"
+
+void F%UNPREFIXED_CLASS_NAME%::Init(const FSoundEffectSourceInitData& InInitData)
+{
+	// Use InitData to setup DSP effects that depend on sample rate, etc.
+	bIsActive = true;
+	VolumeScale = 1.0f;
+	NumChannels = InInitData.NumSourceChannels;
+}
+
+void F%UNPREFIXED_CLASS_NAME%::OnPresetChanged()
+{
+	// Macro to retrieve the current settings value of the parent preset asset.
+	GET_EFFECT_SETTINGS(%UNPREFIXED_CLASS_NAME%);
+
+	// Update the instance's variables based on the settings values. 
+	// Note that Settings variable was created by the GET_EFFECT_SETTINGS macro.
+	VolumeScale = Audio::ConvertToLinear(Settings.VolumeAttenuationDb);
+}
+
+void F%UNPREFIXED_CLASS_NAME%::ProcessAudio(const FSoundEffectSourceInputData& InData, float* OutAudioBufferData)
+{
+	// Use the volume scale value to scale the input audio frame data.
+	for (int32 Index = 0; Index < InData.NumSamples; ++Index)
+	{
+		OutAudioBufferData[Index] = VolumeScale * InData.InputSourceEffectBufferPtr[Index];
+	}
+}
+
+void %PREFIXED_CLASS_NAME%Preset::SetSettings(const F%UNPREFIXED_CLASS_NAME%Settings& InSettings)
+{
+	// Performs necessary broadcast to effect instances
+	UpdateSettings(InSettings);
+}

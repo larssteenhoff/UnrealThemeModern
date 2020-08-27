@@ -1,0 +1,52 @@
+{
+	"devicePlatform": "Android",
+	"resolutionX": 1440,
+	"resolutionY": 2960,
+	"resolutionYImmersiveMode": 0,
+	"pPI": 529,
+	"scaleFactors": [ 0.25, 0.5, 0.75, 1 ],
+	"bezelProperties":
+	{
+		"deviceBezelFile": "GalaxyS9+.png",
+		"BezelViewportRect": {
+                        "X": 12,
+                        "Y": 37,
+                        "Width": 244,
+                        "Height": 496
+                }
+	},
+	"androidProperties":
+	{
+		"gPUFamily": "Adreno (TM) 630",
+		"gLVersion": "OpenGL ES 3.2 V@278.0 (GIT@bafb8dc, Ic43eb7c732) (Date:02/01/18)",
+		"vulkanVersion": "0.0.0",
+		"androidVersion": "8.0.0",
+		"deviceMake": "samsung",
+		"deviceModel": "SM_G965U",
+		"deviceBuildNumber": "",
+		"vulkanAvailable": false,
+		"usingHoudini": false,
+		"gLES2RHIState":
+		{
+			"maxShadowDepthBufferSizeX": 1024,
+			"maxShadowDepthBufferSizeY": 1024,
+			"maxTextureDimensions": 2048,
+			"maxCubeTextureDimensions": 512,
+			"supportsRenderTargetFormat_PF_G8": true,
+			"supportsRenderTargetFormat_PF_FloatRGBA": true,
+			"supportsMultipleRenderTargets": false,
+			"supportsInstancing": false
+		},
+		"gLES31RHIState":
+		{
+			"maxShadowDepthBufferSizeX": 2048,
+			"maxShadowDepthBufferSizeY": 2048,
+			"maxTextureDimensions": 4096,
+			"maxCubeTextureDimensions": 2048,
+			"supportsRenderTargetFormat_PF_G8": true,
+			"supportsRenderTargetFormat_PF_FloatRGBA": true,
+			"supportsMultipleRenderTargets": true,
+			"supportsInstancing": true
+		}
+	}
+}

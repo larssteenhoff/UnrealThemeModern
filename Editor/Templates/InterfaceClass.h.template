@@ -1,0 +1,28 @@
+%COPYRIGHT_LINE%
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "UObject/Interface.h"
+%BASE_CLASS_INCLUDE_DIRECTIVE%
+#include "%UNPREFIXED_CLASS_NAME%.generated.h"
+
+// This class does not need to be modified.
+UINTERFACE(%UCLASS_SPECIFIER_LIST%)
+class %PREFIXED_CLASS_NAME% : public %PREFIXED_BASE_CLASS_NAME%
+{
+	GENERATED_BODY()
+};
+
+/**
+ * 
+ */
+class %CLASS_MODULE_API_MACRO%I%UNPREFIXED_CLASS_NAME%
+{
+	GENERATED_BODY()
+
+	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
+public:
+	%CLASS_FUNCTION_DECLARATIONS%
+	%CLASS_PROPERTIES%
+};

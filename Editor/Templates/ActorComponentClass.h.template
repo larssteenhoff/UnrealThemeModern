@@ -1,0 +1,29 @@
+%COPYRIGHT_LINE%
+
+#pragma once
+
+#include "CoreMinimal.h"
+%BASE_CLASS_INCLUDE_DIRECTIVE%
+#include "%UNPREFIXED_CLASS_NAME%.generated.h"
+
+
+UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+class %CLASS_MODULE_API_MACRO%%PREFIXED_CLASS_NAME% : public %PREFIXED_BASE_CLASS_NAME%
+{
+	GENERATED_BODY()
+
+public:	
+	// Sets default values for this component's properties
+	%PREFIXED_CLASS_NAME%();
+
+protected:
+	// Called when the game starts
+	virtual void BeginPlay() override;
+
+public:	
+	// Called every frame
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+	%CLASS_FUNCTION_DECLARATIONS%	
+	%CLASS_PROPERTIES%
+};

@@ -1,0 +1,40 @@
+{
+	"DevicePlatform": "IOS",
+	"ResolutionX": 1125,
+	"ResolutionY": 2436,
+	"PPI": 458,
+	"ScaleFactors": [ 0.25, 0.5, 0.75, 1.0 ],
+	"iOSProperties": {
+		"DeviceModel": "IPhoneX",
+		"NativeScaleFactor": 3,
+		"GLES2RHIState": {
+			"MaxShadowDepthBufferSizeX": 4096,
+			"MaxShadowDepthBufferSizeY": 4096,
+			"MaxTextureDimensions": 4096,
+			"MaxCubeTextureDimensions": 4096,
+			"SupportsRenderTargetFormat_PF_G8": true,
+			"SupportsRenderTargetFormat_PF_FloatRGBA": true,
+			"SupportsMultipleRenderTargets": false,
+			"SupportsInstancing": true
+		},
+		"MetalRHIState": {
+			"MaxShadowDepthBufferSizeX": 4096,
+			"MaxShadowDepthBufferSizeY": 4096,
+			"MaxTextureDimensions": 4096,
+			"MaxCubeTextureDimensions": 4096,
+			"SupportsRenderTargetFormat_PF_G8": false,
+			"SupportsRenderTargetFormat_PF_FloatRGBA": true,
+			"SupportsMultipleRenderTargets": true,
+			"SupportsInstancing": true
+		}
+	},
+	"BezelProperties": {
+		"DeviceBezelFile": "iPhoneX.png",
+    "BezelViewportRect": {
+                        "X": 24,
+                        "Y": 22,
+                        "Width": 312,
+                        "Height": 677
+                }
+	}
+}

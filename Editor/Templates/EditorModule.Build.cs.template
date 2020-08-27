@@ -1,0 +1,13 @@
+%COPYRIGHT_LINE%
+
+using UnrealBuildTool;
+
+public class %MODULE_NAME% : ModuleRules
+{
+	public %MODULE_NAME%(ReadOnlyTargetRules Target) : base(Target)
+	{
+		PublicDependencyModuleNames.AddRange(new string[] { %PUBLIC_DEPENDENCY_MODULE_NAMES% });
+
+		PrivateDependencyModuleNames.AddRange(new string[] { %PRIVATE_DEPENDENCY_MODULE_NAMES% });
+	}
+}

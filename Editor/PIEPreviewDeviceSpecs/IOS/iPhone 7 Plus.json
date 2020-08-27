@@ -1,0 +1,40 @@
+{
+	"DevicePlatform": "IOS",
+	"ResolutionX": 1080,
+	"ResolutionY": 1920,
+	"PPI": 401,
+	"ScaleFactors": [ 0.25, 0.4, 0.5, 0.75, 1.0 ],
+	"iOSProperties": {
+    "DeviceModel": "IPhone7Plus",
+    "NativeScaleFactor": 3,
+		"GLES2RHIState": {
+			"MaxShadowDepthBufferSizeX": 16384,
+			"MaxShadowDepthBufferSizeY": 16384,
+			"MaxTextureDimensions": 16384,
+			"MaxCubeTextureDimensions": 16384,
+			"SupportsRenderTargetFormat_PF_G8": true,
+			"SupportsRenderTargetFormat_PF_FloatRGBA": true,
+			"SupportsMultipleRenderTargets": false,
+			"SupportsInstancing": true
+		},
+		"MetalRHIState": {
+			"MaxShadowDepthBufferSizeX": 16384,
+			"MaxShadowDepthBufferSizeY": 16384,
+			"MaxTextureDimensions": 16384,
+			"MaxCubeTextureDimensions": 16384,
+			"SupportsRenderTargetFormat_PF_G8": false,
+			"SupportsRenderTargetFormat_PF_FloatRGBA": true,
+			"SupportsMultipleRenderTargets": true,
+			"SupportsInstancing": true
+		}
+	},
+	"BezelProperties": {
+		"DeviceBezelFile": "iPhone7.png",
+    "BezelViewportRect": {
+                        "X": 30,
+                        "Y": 103,
+                        "Width": 387,
+                        "Height": 688
+                }
+	}
+}

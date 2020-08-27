@@ -1,0 +1,58 @@
+%COPYRIGHT_LINE%
+
+%PCH_INCLUDE_DIRECTIVE%
+// Includes for audio dsp helper classes
+#include "%UNPREFIXED_CLASS_NAME%.h"
+%ADDITIONAL_INCLUDE_DIRECTIVES%
+
+
+F%UNPREFIXED_CLASS_NAME%::F%UNPREFIXED_CLASS_NAME%()
+{
+}
+
+F%UNPREFIXED_CLASS_NAME%::~F%UNPREFIXED_CLASS_NAME%()
+{
+}
+
+void F%UNPREFIXED_CLASS_NAME%::Init(const FSoundEffectSubmixInitData& InitData)
+{
+	// Do any initializations here
+	// SampleRate = InitData.SampleRate
+}
+
+void F%UNPREFIXED_CLASS_NAME%::OnPresetChanged()
+{
+	GET_EFFECT_SETTINGS(%UNPREFIXED_CLASS_NAME%);
+
+	// Can access your settings safely here as they've been copied from the game thread
+	// This function is called in the audio render thread before OnProcessAudio
+	float MyProperty = Settings.MyProperty;
+}
+
+void F%UNPREFIXED_CLASS_NAME%::OnProcessAudio(const FSoundEffectSubmixInputData& InData, FSoundEffectSubmixOutputData& OutData)
+{
+	const float* InputBuffer = InData.AudioBuffer->GetData();
+	int32 InputBufferSize = InData.AudioBuffer->Num();
+	float* OutputBuffer = OutData.AudioBuffer->GetData();
+	int32 OutputBufferSize = OutData.AudioBuffer->Num();
+
+	// here, we get min of num channels of input and output (note that submix processing output channels can be different than input)
+	int32 NumChannels = FMath::Min(InData.NumChannels, OutData.NumChannels);
+
+	// Do your submix processing here. Here we just do a pass through. Submix buffers will be pre-zero'd so no need to pad out extra zeros.
+	for (int32 OutputBufferIndex = 0, InputBufferIndex = 0; OutputBufferIndex < OutputBufferSize; OutputBufferIndex += OutData.NumChannels, InputBufferIndex += InData.NumChannels)
+	{
+		// Copy the input audio frame to the output frame
+		for (int32 ChannelIndex = 0; ChannelIndex < NumChannels; ChannelIndex++)
+		{
+			OutputBuffer[OutputBufferIndex + ChannelIndex] = InputBuffer[InputBufferIndex + ChannelIndex];
+		}
+	}
+}
+
+void %PREFIXED_CLASS_NAME%Preset::SetSettings(const F%UNPREFIXED_CLASS_NAME%Settings& InSettings)
+{
+	UpdateSettings(InSettings);
+}
+
+%ADDITIONAL_MEMBER_DEFINITIONS%

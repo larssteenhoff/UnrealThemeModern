@@ -1,0 +1,76 @@
+%COPYRIGHT_LINE%
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "Sound/SoundEffectSubmix.h"
+#include "AudioEffect.h"
+#include "%UNPREFIXED_CLASS_NAME%.generated.h"
+
+// ========================================================================
+// F%UNPREFIXED_CLASS_NAME%Settings
+// UStruct used to define user-exposed params for use with your effect.
+// ========================================================================
+
+USTRUCT(BlueprintType)
+struct %CLASS_MODULE_API_MACRO%F%UNPREFIXED_CLASS_NAME%Settings
+{
+	GENERATED_USTRUCT_BODY()
+
+	// Define your effect parameters below...
+	
+	// Information about your parameter described here will show up in the editor as a tool-tip in the effect preset object
+	UPROPERTY(EditAnywhere, Category = SoundEffect)
+	float MyProperty;
+
+	F%UNPREFIXED_CLASS_NAME%Settings()
+	: MyProperty(1.0f)
+	{
+	}
+};
+
+// ========================================================================
+// %PREFIXED_CLASS_NAME%
+// Class which processes audio streams and uses parameters defined in the preset class.
+// This class is instanced for each submix effect preset in a submix effect chain.
+// ========================================================================
+
+class %CLASS_MODULE_API_MACRO%F%UNPREFIXED_CLASS_NAME% : public FSoundEffectSubmix
+{
+public:
+	F%UNPREFIXED_CLASS_NAME%();
+	~F%UNPREFIXED_CLASS_NAME%();
+
+	// Called on an audio effect at initialization on main thread before audio processing begins.
+	virtual void Init(const FSoundEffectSubmixInitData& InSampleRate) override;
+	
+	// Called when an audio effect preset is changed
+	virtual void OnPresetChanged() override;
+
+	// Process the input block of audio. Called on audio thread.
+	virtual void OnProcessAudio(const FSoundEffectSubmixInputData& InData, FSoundEffectSubmixOutputData& OutData) override;
+
+private:
+	// Any code you need to actually run an instance of the submix effect goes here
+};
+
+// ========================================================================
+// %PREFIXED_CLASS_NAME%Preset
+// This code exposes your preset settings and effect class to the editor.
+// ========================================================================
+
+UCLASS()
+class %CLASS_MODULE_API_MACRO%%PREFIXED_CLASS_NAME%Preset : public USoundEffectSubmixPreset
+{
+	GENERATED_BODY()
+
+public:
+	EFFECT_PRESET_METHODS(%UNPREFIXED_CLASS_NAME%)
+
+	UFUNCTION(BlueprintCallable, Category = "Audio|Effects")
+	void SetSettings(const F%UNPREFIXED_CLASS_NAME%Settings& InSettings);
+	
+	// %UNPREFIXED_CLASS_NAME% Preset Settings
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = SubmixEffectPreset)
+	F%UNPREFIXED_CLASS_NAME%Settings Settings;
+};

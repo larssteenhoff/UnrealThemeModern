@@ -1,0 +1,14 @@
+%COPYRIGHT_LINE%
+
+using UnrealBuildTool;
+using System.Collections.Generic;
+
+public class %MODULE_NAME%Target : TargetRules
+{
+	public %MODULE_NAME%Target(TargetInfo Target) : base(Target)
+	{
+		Type = TargetType.Game;
+
+		ExtraModuleNames.AddRange( new string[] { %EXTRA_MODULE_NAMES% } );
+	}
+}

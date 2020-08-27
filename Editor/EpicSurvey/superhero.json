@@ -1,0 +1,31 @@
+{
+	"id": "D359BCB8-934A-4E52-9641-ADCD2AEC8A9B",
+	"name": "Superheroes",
+	"type": "branch",
+	"instructions": "Cras nulla augue, vehicula ac suscipit eget, congue molestie arcu. Quisque eu pharetra quam. Fusce ut nulla et turpis viverra fermentum et quis mi. Morbi scelerisque dictum sodales.",
+	"banner": "survey_banner.png",
+	"survey_version": 2,
+	"pages":
+	[
+		{
+			"blocks":
+			[
+				{
+					"style": "multiline",
+					"required": "false",
+					"questions": 
+					[
+						"What is your favourite superhero ?"
+					],
+					"answers": 
+					[
+						"Batman",
+						"Spiderman",
+						"Superman",
+						"Ironman"
+					]
+				}
+			]
+		}
+	]
+}

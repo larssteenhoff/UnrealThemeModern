@@ -1,0 +1,52 @@
+{
+	"id": "F333EFC4-0C16-4301-AF3A-8B3BDB453B25",
+	"name": "Artist Survey Branch Name",
+	"type": "branch",
+	"instructions": "Cras nulla augue, vehicula ac suscipit eget, congue molestie arcu. Quisque eu pharetra quam. Fusce ut nulla et turpis viverra fermentum et quis mi. Morbi scelerisque dictum sodales.",
+	"banner": "survey_banner.png",
+	"survey_version": 2,
+	"pages":
+	[
+		{
+			"blocks":
+			[
+				{
+					"style": "columns",
+					"instructions": "Please rank the following customer service factors, from the most to least important to you, when interacting with our agency.",
+					"questions": 
+					[
+						"Call wait time",
+						"Call hold time",
+						"Representative's customer service skills",
+						"Representative's knowledge/technical skills",
+						"Resolution of issue",
+					],
+					"answers": 
+					[
+						"Strongly\nDisagree",
+						"Disagree",
+						"Neutral",
+						"Agree",
+						"Strongly\nAgree"
+					]
+				},
+				{
+					"style": "multiline",
+					"response": "single",
+					"questions": 
+					[
+						"How pleased were you with our customer service?"
+					],
+					"answers": 
+					[
+						"Great!",
+						"Super!",
+						"Best Evar!",
+						"You guys are the best!",
+						"Can't complain"
+					]
+				}
+			]
+		}
+	]
+}

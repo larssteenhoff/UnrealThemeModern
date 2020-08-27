@@ -1,0 +1,27 @@
+%COPYRIGHT_LINE%
+
+%PCH_INCLUDE_DIRECTIVE%
+#include "%UNPREFIXED_CLASS_NAME%WidgetStyle.h"
+%ADDITIONAL_INCLUDE_DIRECTIVES%
+
+F%UNPREFIXED_CLASS_NAME%Style::F%UNPREFIXED_CLASS_NAME%Style()
+{
+}
+
+F%UNPREFIXED_CLASS_NAME%Style::~F%UNPREFIXED_CLASS_NAME%Style()
+{
+}
+
+const FName F%UNPREFIXED_CLASS_NAME%Style::TypeName(TEXT("F%UNPREFIXED_CLASS_NAME%Style"));
+
+const F%UNPREFIXED_CLASS_NAME%Style& F%UNPREFIXED_CLASS_NAME%Style::GetDefault()
+{
+	static F%UNPREFIXED_CLASS_NAME%Style Default;
+	return Default;
+}
+
+void F%UNPREFIXED_CLASS_NAME%Style::GetResources(TArray<const FSlateBrush*>& OutBrushes) const
+{
+	// Add any brush resources here so that Slate can correctly atlas and reference them
+}
+

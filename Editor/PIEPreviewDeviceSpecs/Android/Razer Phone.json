@@ -1,0 +1,52 @@
+{
+	"devicePlatform": "Android",
+	"resolutionX": 1440,
+	"resolutionY": 2560,
+	"resolutionYImmersiveMode": 0,
+	"pPI": 515,
+	"scaleFactors": [ 0.25, 0.5, 0.75, 1 ],
+	"bezelProperties":
+	{
+		"deviceBezelFile": "RazerPhone.png",
+		"BezelViewportRect": {
+                        "X": 32,
+                        "Y": 203,
+                        "Width": 868,
+                        "Height": 1646
+                }
+	},
+	"androidProperties":
+	{
+		"gPUFamily": "Adreno (TM) 540",
+		"gLVersion": "OpenGL ES 3.2 V@207.0 (GIT@44359f7, I64d5763be1) (Date:06/20/17)",
+		"vulkanVersion": "0.0.0",
+		"androidVersion": "7.1.1",
+		"deviceMake": "razer",
+		"deviceModel": "Phone",
+		"deviceBuildNumber": "",
+		"vulkanAvailable": false,
+		"usingHoudini": false,
+		"gLES2RHIState":
+		{
+			"maxShadowDepthBufferSizeX": 1024,
+			"maxShadowDepthBufferSizeY": 1024,
+			"maxTextureDimensions": 2048,
+			"maxCubeTextureDimensions": 512,
+			"supportsRenderTargetFormat_PF_G8": true,
+			"supportsRenderTargetFormat_PF_FloatRGBA": true,
+			"supportsMultipleRenderTargets": false,
+			"supportsInstancing": false
+		},
+		"gLES31RHIState":
+		{
+			"maxShadowDepthBufferSizeX": 2048,
+			"maxShadowDepthBufferSizeY": 2048,
+			"maxTextureDimensions": 4096,
+			"maxCubeTextureDimensions": 2048,
+			"supportsRenderTargetFormat_PF_G8": true,
+			"supportsRenderTargetFormat_PF_FloatRGBA": true,
+			"supportsMultipleRenderTargets": true,
+			"supportsInstancing": true
+		}
+	}
+}

@@ -1,0 +1,15 @@
+%COPYRIGHT_LINE%
+
+#include "%MODULE_NAME%.h"
+#include "Modules/ModuleInterface.h"
+#include "Modules/ModuleManager.h"
+
+class F%MODULE_NAME%Module : public IModuleInterface
+{	
+	virtual void StartupModule() override
+	{
+		%MODULE_STARTUP_CODE%	
+	}
+};
+
+IMPLEMENT_MODULE( F%MODULE_NAME%Module, %MODULE_NAME% );

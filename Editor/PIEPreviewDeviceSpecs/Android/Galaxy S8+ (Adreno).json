@@ -1,0 +1,52 @@
+{
+	"devicePlatform": "Android",
+	"resolutionX": 1440,
+	"resolutionY": 2960,
+	"resolutionYImmersiveMode": 0,
+	"pPI": 529,
+	"scaleFactors": [ 0.25, 0.5, 0.75, 1 ],
+	"bezelProperties":
+	{
+		"deviceBezelFile": "GalaxyS8+.png",
+		"BezelViewportRect": {
+                        "X": 10,
+                        "Y": 36,
+                        "Width": 274,
+                        "Height": 564
+                }
+	},
+	"androidProperties":
+	{
+		"gPUFamily": "Adreno (TM) 540",
+		"gLVersion": "OpenGL ES 3.2 V@269.0 (GIT@7780dff, Iaaa4d6d123) (Date:01/17/18)",
+		"vulkanVersion": "0.0.0",
+		"androidVersion": "8.0.0",
+		"deviceMake": "samsung",
+		"deviceModel": "SM_G955U",
+		"deviceBuildNumber": "",
+		"vulkanAvailable": false,
+		"usingHoudini": false,
+		"gLES2RHIState":
+		{
+			"maxShadowDepthBufferSizeX": 1024,
+			"maxShadowDepthBufferSizeY": 1024,
+			"maxTextureDimensions": 2048,
+			"maxCubeTextureDimensions": 512,
+			"supportsRenderTargetFormat_PF_G8": true,
+			"supportsRenderTargetFormat_PF_FloatRGBA": true,
+			"supportsMultipleRenderTargets": false,
+			"supportsInstancing": false
+		},
+		"gLES31RHIState":
+		{
+			"maxShadowDepthBufferSizeX": 2048,
+			"maxShadowDepthBufferSizeY": 2048,
+			"maxTextureDimensions": 4096,
+			"maxCubeTextureDimensions": 2048,
+			"supportsRenderTargetFormat_PF_G8": true,
+			"supportsRenderTargetFormat_PF_FloatRGBA": true,
+			"supportsMultipleRenderTargets": true,
+			"supportsInstancing": true
+		}
+	}
+}

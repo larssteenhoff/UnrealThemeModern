@@ -1,0 +1,141 @@
+{
+	"id": "36F6D9AD-CEB0-4EA2-896B-7C2EFBE87CF6",
+	"name": "Survey Name",
+	"instructions": "Cras nulla augue, vehicula ac suscipit eget, congue molestie arcu. Quisque eu pharetra quam. Fusce ut nulla et turpis viverra fermentum et quis mi. Morbi scelerisque dictum sodales.",
+	"banner": "survey_banner.png",
+	"survey_version": 2,
+	"branches":
+	[
+		{
+			"branch_name": "artist",
+			"survey": "artist.json",
+			"threshold": 100
+		},
+		{
+			"branch_name": "programmer",
+			"survey": "programmer.json",
+			"threshold": 100
+		},
+		{
+			"branch_name": "superhero",
+			"survey": "superhero.json",
+			"threshold": 100
+		}
+	],
+	"pages":
+	[
+		{
+			"blocks":
+			[
+				{
+					"style": "inline",
+					"instructions": "Please answer the following questions to the best of your ability.",
+					"questions":
+					[
+						"Would you decribe yourself as an Artist or a Programmer?",
+					],
+					"answers": 
+					[
+						{
+							"text": "artist",
+							"branch_points":
+							[
+								{ "branch": "artist", "points": 100	}
+							]
+						},
+						{
+							"text": "programmer",
+							"branch_points":
+							[
+								{ "branch": "programmer", "points": 100	}
+							]
+						}
+					]
+				},
+				{
+					"style": "inline-text",
+					"instructions": "Please answer the following questions to the best of your ability.",
+					"questions":
+					[
+						"Please enter your favorite child names.",
+					],
+					"answers": 
+					[
+						"Boy",
+						"Girl"
+					]
+				},
+				{
+					"style": "inline-text",
+					"questions":
+					[
+						"Please enter your name.",
+					],
+					"answers": 
+					[
+						""
+					]
+				},
+				{
+					"style": "multiline-text",
+					"questions":
+					[
+						"Please enter your 3 favorite foods.",
+					],
+					"answers": 
+					[
+						"1.",
+						"2.",
+						"3."
+					]
+				}
+			]
+		},
+		{
+			"blocks":
+			[
+				{
+					"style": "multiline",
+					"response": 2,
+					"required": "false",
+					"questions": 
+					[
+						"What are your favorite parts of the editor? Check 2."
+					],
+					"answers": 
+					[
+						"Placement Mode",
+						"Localization",
+						"Globalization",
+						"Internationalization"
+					]
+				},
+				{
+					"style": "inline",
+					"instructions": "Please answer the following questions to the best of your ability.",
+					"questions":
+					[
+						"Do you like superheroes ?"
+					],
+					"answers": 
+					[
+						{
+							"text": "Yes",
+							"branch_points":
+							[
+								{ "branch": "superhero", "points": 100	}
+							]
+						},
+						{
+							"text": "No",
+							"branch_points":
+							[
+								{ "branch": "", "points": 0	}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,125 @@
+%COPYRIGHT_LINE%
+
+%PCH_INCLUDE_DIRECTIVE%
+#include "%UNPREFIXED_CLASS_NAME%.h"
+
+%ADDITIONAL_INCLUDE_DIRECTIVES%
+
+#include "Sound/SoundCue.h"
+#include "Sound/SoundCueTemplate.h"
+#include "Sound/SoundWave.h"
+#include "Sound/SoundNode.h"
+#include "Sound/SoundNodeModulator.h"
+#include "Sound/SoundNodeWavePlayer.h"
+
+#if WITH_EDITOR
+#include "DetailCategoryBuilder.h"
+#include "DetailLayoutBuilder.h"
+#include "Sound/AudioSettings.h"
+#include "SoundCueGraph/SoundCueGraphNode.h"
+#include "SoundCueGraph/SoundCueGraph.h"
+#include "SoundCueGraph/SoundCueGraphNode_Root.h"
+#include "SoundCueGraph/SoundCueGraphSchema.h"
+#endif // WITH_EDITOR
+
+
+#define LOCTEXT_NAMESPACE "%UNPREFIXED_CLASS_NAME%"
+%PREFIXED_CLASS_NAME%::%PREFIXED_CLASS_NAME%(const FObjectInitializer& ObjectInitializer)
+	: Super(ObjectInitializer)
+{
+#if WITH_EDITOR
+// Add editor data initialization here
+	bLooping = true;
+#endif WITH_EDITOR
+}
+
+#if WITH_EDITOR
+void %PREFIXED_CLASS_NAME%::OnRebuildGraph(USoundCue& SoundCue) const
+{
+	const UAudioSettings* AudioSettings = GetDefault<UAudioSettings>();
+	if (!AudioSettings)
+	{
+		return;
+	}
+
+	if (!SoundWave)
+	{
+		return;
+	}
+
+	// Add modulator node as first node. Hardcoded values as an example of adding functionality
+	// that is hidden from editor/UI.
+	USoundNodeModulator& ModulatorNode = ConstructSoundNodeRoot<USoundNodeModulator>(SoundCue);
+	ModulatorNode.PitchMin  = 0.80f;
+	ModulatorNode.PitchMax  = 1.10f;
+	ModulatorNode.VolumeMin = 0.75f;
+	ModulatorNode.VolumeMax = 1.00f;
+
+	// ConstructSoundNodeChild (and SetSoundNodePosition) takes a Row and Column, expected to be tracked and
+	// updated here as you construct the graph to allow for visually friendly auto-generated SoundCues.
+	// Converting to a SoundCue in editor (in context menu of generate SoundCueTemplate instances) is a great
+	// way to debug your generated graph.
+	int32 Column = 1; // 1 as root is '0', which was added above.
+	int32 Row = 0;
+
+	// Add more nodes/branches here to allow for additional functionality between leaf wave players and root modulator.
+	// Common practice is to increment generation and increment or reset sibling index depending on branching/looping
+	// as you go.
+
+	const int32 InputPinIndex = 0;
+	USoundNodeWavePlayer& WavePlayerNode = ConstructSoundNodeChild<USoundNodeWavePlayer>(SoundCue, &ModulatorNode, Column, Row, InputPinIndex);
+	WavePlayerNode.SetSoundWave(SoundWave);
+	WavePlayerNode.bLooping = bLooping;
+}
+
+TSet<FName>& %PREFIXED_CLASS_NAME%::GetWhitelistedCategories()
+{
+	static TSet<FName> Categories;
+	if (Categories.Num() == 0)
+	{
+		// Add exposed categories here that you'd like to show
+		// up in the editor (should match category names properties
+		// are assigned to in the header, otherwise the properties
+		// will be hidden by default).  If you would like to expose
+		// default property categories inherited by USoundCue,
+		// add them here as well.
+		Categories.Add(FName(TEXT("Waves")));
+	}
+
+	return Categories;
+}
+
+%ADDITIONAL_MEMBER_DEFINITIONS%
+
+TSharedRef<IDetailCustomization> F%UNPREFIXED_CLASS_NAME%DetailCustomization::MakeInstance()
+{
+	return MakeShareable(new F%UNPREFIXED_CLASS_NAME%DetailCustomization);
+}
+
+void F%UNPREFIXED_CLASS_NAME%DetailCustomization::CustomizeDetails(IDetailLayoutBuilder& DetailLayout)
+{
+	TArray<FName> CategoryNames;
+	DetailLayout.GetCategoryNames(CategoryNames);
+
+	const TSet<FName>& Whitelist = %PREFIXED_CLASS_NAME%::GetWhitelistedCategories();
+	for (FName CategoryName : CategoryNames)
+	{
+		if (!Whitelist.Contains(CategoryName))
+		{
+			DetailLayout.HideCategory(CategoryName);
+		}
+	}
+}
+
+void F%UNPREFIXED_CLASS_NAME%DetailCustomization::Register(FPropertyEditorModule& PropertyModule)
+{
+	PropertyModule.RegisterCustomClassLayout("%UNPREFIXED_CLASS_NAME%", FOnGetDetailCustomizationInstance::CreateStatic(&F%UNPREFIXED_CLASS_NAME%DetailCustomization::MakeInstance));
+}
+
+void F%UNPREFIXED_CLASS_NAME%DetailCustomization::Unregister(FPropertyEditorModule& PropertyModule)
+{
+	PropertyModule.UnregisterCustomClassLayout("%UNPREFIXED_CLASS_NAME%");
+}
+
+#endif // WITH_EDITOR
+#undef LOCTEXT_NAMESPACE

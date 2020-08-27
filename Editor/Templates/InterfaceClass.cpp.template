@@ -1,0 +1,7 @@
+%COPYRIGHT_LINE%
+
+%PCH_INCLUDE_DIRECTIVE%
+#include "%UNPREFIXED_CLASS_NAME%.h"
+%ADDITIONAL_INCLUDE_DIRECTIVES%
+
+// Add default functionality here for any I%UNPREFIXED_CLASS_NAME% functions that are not pure virtual.

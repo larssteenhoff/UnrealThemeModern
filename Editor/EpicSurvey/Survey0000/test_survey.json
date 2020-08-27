@@ -1,0 +1,54 @@
+{
+	"id": "36F6D9AD-CEB0-4EA2-896B-7C2EFBE87CF6",
+	"name": "Hello Rocket Beta Tester!",
+	"instructions": "We're testing out a new built-in survey feature.  If you have time, fill out this super simple test sample.",
+	"banner": "rocket_survey_banner.png",
+	"blocks":
+	[
+		{
+			"style": "columns",
+			"questions": 
+			[
+				"Rate your experience with the Rocket beta tools so far."
+			],
+			"answers": 
+			[
+				"Very\nBad",
+				"Bad",
+				"OK",
+				"Good",
+				"Very\nGood"
+			]
+		},
+		{
+			"style": "multiline",
+			"response": "multi",
+			"questions": 
+			[
+				"How are you getting your questions resolved? (choose all that apply)."
+			],
+			"answers": 
+			[
+				"Rocket UDN",
+				"Forums",
+				"I'm not",
+				"Other"
+			]
+		},
+		{
+			"style": "columns",
+			"questions": 
+			[
+				"How likely are you to high-five us at GDC?"
+			],
+			"answers": 
+			[
+				"Very\nUnlikely",
+				"Unlikely",
+				"Maybe",
+				"Likely",
+				"Very\nLikely"
+			]
+		}
+	]
+}

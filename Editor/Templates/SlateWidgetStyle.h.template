@@ -1,0 +1,45 @@
+%COPYRIGHT_LINE%
+
+#pragma once
+
+#include "CoreMinimal.h"
+%BASE_CLASS_INCLUDE_DIRECTIVE%
+#include "SlateWidgetStyleContainerBase.h"
+
+#include "%UNPREFIXED_CLASS_NAME%WidgetStyle.generated.h"
+
+/**
+ * %CURSORFOCUSLOCATION%
+ */
+USTRUCT()
+struct %CLASS_MODULE_API_MACRO%F%UNPREFIXED_CLASS_NAME%Style : public FSlateWidgetStyle
+{
+	GENERATED_USTRUCT_BODY()
+
+	F%UNPREFIXED_CLASS_NAME%Style();
+	virtual ~F%UNPREFIXED_CLASS_NAME%Style();
+
+	// FSlateWidgetStyle
+	virtual void GetResources(TArray<const FSlateBrush*>& OutBrushes) const override;
+	static const FName TypeName;
+	virtual const FName GetTypeName() const override { return TypeName; };
+	static const F%UNPREFIXED_CLASS_NAME%Style& GetDefault();
+};
+
+/**
+ */
+UCLASS(hidecategories=Object, MinimalAPI)
+class U%UNPREFIXED_CLASS_NAME%WidgetStyle : public USlateWidgetStyleContainerBase
+{
+	GENERATED_BODY()
+
+public:
+	/** The actual data describing the widget appearance. */
+	UPROPERTY(Category=Appearance, EditAnywhere, meta=(ShowOnlyInnerProperties))
+	F%UNPREFIXED_CLASS_NAME%Style WidgetStyle;
+
+	virtual const struct FSlateWidgetStyle* const GetStyle() const override
+	{
+		return static_cast< const struct FSlateWidgetStyle* >( &WidgetStyle );
+	}
+};

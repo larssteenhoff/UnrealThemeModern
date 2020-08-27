@@ -1,0 +1,45 @@
+{
+	"id": "FE5CD131-E4AF-4FE6-9269-12B573B66CA8",
+	"name": "Anim Blueprint Editor Tutorial Survey",
+	"instructions": "Please help us improve the interactive tutorial by answering these quick questions!",
+	"banner": "survey_banner.png",
+	"survey_version": 2,
+	"auto_prompt": false,
+	"pages":
+	[
+		{
+			"blocks":
+			[
+				{
+					"style": "inline",
+					"questions":
+					[
+						"Did you enjoy the interactive tutorial?",
+						"Was it effective at teaching you these concepts?",
+						"Would you like more interactive tutorials?"
+					],
+					"answers": 
+					[
+						"Yes",
+						"No"
+					]
+				},
+				{
+					"style": "columns",
+					"questions": 
+					[
+						"How useful did you find interactive tutorial?"
+					],
+					"answers": 
+					[
+						"Very\nUseless",
+						"Useless",
+						"Neutral",
+						"Useful",
+						"Very\nUseful"
+					]
+				},
+			]
+		}
+	]
+}

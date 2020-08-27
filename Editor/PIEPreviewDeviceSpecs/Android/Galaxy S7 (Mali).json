@@ -1,0 +1,52 @@
+{
+	"devicePlatform": "Android",
+	"resolutionX": 1440,
+	"resolutionY": 2560,
+	"resolutionYImmersiveMode": 0,
+	"pPI": 577,
+	"scaleFactors": [ 0.25, 0.5, 0.75, 1 ],
+	"bezelProperties":
+	{
+		"deviceBezelFile": "GalaxyS7.png",
+		"BezelViewportRect": {
+			"X": 19,
+			"Y": 90,
+			"Width": 362,
+			"Height": 637
+		}
+	},
+	"androidProperties":
+	{
+		"gPUFamily": "Mali-T880",
+		"gLVersion": "OpenGL ES 3.2 v1.r22p0-01rel0.f294e54ceb2cb2d81039204fa4b0402e",
+		"vulkanVersion": "0.0.0",
+		"androidVersion": "8.0.0",
+		"deviceMake": "samsung",
+		"deviceModel": "SM_G930F",
+		"deviceBuildNumber": "",
+		"vulkanAvailable": false,
+		"usingHoudini": false,
+		"gLES2RHIState":
+		{
+			"maxShadowDepthBufferSizeX": 2048,
+			"maxShadowDepthBufferSizeY": 2048,
+			"maxTextureDimensions": 2048,
+			"maxCubeTextureDimensions": 2048,
+			"supportsRenderTargetFormat_PF_G8": true,
+			"supportsRenderTargetFormat_PF_FloatRGBA": true,
+			"supportsMultipleRenderTargets": false,
+			"supportsInstancing": false
+		},
+		"gLES31RHIState":
+		{
+			"maxShadowDepthBufferSizeX": 2048,
+			"maxShadowDepthBufferSizeY": 2048,
+			"maxTextureDimensions": 2048,
+			"maxCubeTextureDimensions": 2048,
+			"supportsRenderTargetFormat_PF_G8": true,
+			"supportsRenderTargetFormat_PF_FloatRGBA": true,
+			"supportsMultipleRenderTargets": true,
+			"supportsInstancing": true
+		}
+	}
+}
