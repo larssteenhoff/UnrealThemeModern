@@ -14,4 +14,5 @@ https://github.com/Sythenz/UE4Minimal
 
 ![UE4 Modern Screenshot 01](http://www.larssteenhoff.com/forum_pics/git/UnrealModern.png)
 
-
+Some of the icons used in the theme are from:
+https://feathericons.com
