@@ -29,4 +29,4 @@ Installation:
 
 Should you want the Graph Nodes in blueprint/material editor to be the old versions, Do not copy and replace the "Editor/Slate/Graph" folder.
 
-Once all is done, open the editor and enjoy your new minimal theme.
+Thats all
