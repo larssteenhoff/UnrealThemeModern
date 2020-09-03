@@ -23,9 +23,9 @@ Installation:
 
 1. Navigate to your Engine\Content folder.
 
-2. Make a copy of these two folders: "Editor" and "Slate" this will be your backup if you would like to revert the theme, otherwise you'll have to reinstall the engine.
+2. Make a copy of these two folders: "Editor" and "Slate" this will be your backup if you would like to revert the theme without reinstalling unreal.
 
-3. Download or clone the repo, and copy the "Editor" and "Slate" folders into your Engine/Content folder. You will be asked to override a few thousand files, hit yes.
+3. Download or clone the repo, and copy the "Editor" and "Slate" folders into your Engine/Content folder. You will be asked to override the files, hit yes.
 
 Should you want the Graph Nodes in blueprint/material editor to be the old versions, Do not copy and replace the "Editor/Slate/Graph" folder.
 
